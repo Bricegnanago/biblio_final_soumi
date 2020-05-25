@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkMenu">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+  </object>
+  <object class="GtkMenu">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+  </object>
+  <object class="GtkWindow">
+    <property name="can_focus">False</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="borrow_window">
+    <property name="can_focus">False</property>
+    <property name="default_width">440</property>
+    <property name="default_height">425</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="return_book_label">
+            <property name="width_request">440</property>
+            <property name="height_request">49</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <style>
+              <class name="label_to_borrow"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="container_of_borrow">
+            <property name="width_request">345</property>
+            <property name="height_request">134</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">6</property>
+            <child>
+              <object class="GtkEntry" id="num_cart_label_to_borrow">
+                <property name="height_request">53</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">N° Carte Client</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="title_of_book_to_borrow">
+                <property name="height_request">53</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Titre du livre</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkGrid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkButton" id="submit_borrow">
+                    <property name="label" translatable="yes">Valider</property>
+                    <property name="name">submit_borrow</property>
+                    <property name="height_request">45</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="hexpand">True</property>
+                    <signal name="clicked" handler="on_submit_borrow_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="clear_fields_of_borrow">
+                    <property name="label" translatable="yes">Annuler</property>
+                    <property name="height_request">45</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="hexpand">True</property>
+                    <signal name="clicked" handler="on_clear_fields_of_borrow_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">46</property>
+            <property name="y">121</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="message_text_borrow">
+            <property name="width_request">269</property>
+            <property name="height_request">41</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <style>
+              <class name="error_to_borrow"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">88</property>
+            <property name="y">52</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="return_on_book">
+            <property name="label" translatable="yes">Retourner un livre</property>
+            <property name="width_request">340</property>
+            <property name="height_request">57</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_return_on_book_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">47</property>
+            <property name="y">296</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="submit_button_to_statistic">
+            <property name="width_request">83</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_submit_button_to_statistic_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="height_request">37</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/graph.png</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">183</property>
+            <property name="y">361</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="hide_borrow_window">
+            <property name="width_request">100</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_hide_borrow_window_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/hide.png</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">49</property>
+            <property name="y">375</property>
+          </packing>
+        </child>
+        <style>
+          <class name="container_login"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="container_borrow"/>
+    </style>
+  </object>
+  <object class="GtkWindow" id="client_page">
+    <property name="can_focus">False</property>
+    <property name="default_width">450</property>
+    <property name="default_height">513</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="title_of_client_page">
+            <property name="width_request">480</property>
+            <property name="height_request">61</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">GESTION CLIENTELE</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="hide_client_page">
+            <property name="width_request">100</property>
+            <property name="height_request">37</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_hide_client_page_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/hide.png</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">459</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox">
+            <property name="width_request">440</property>
+            <property name="height_request">90</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hexpand">False</property>
+            <property name="layout_style">start</property>
+            <child>
+              <object class="GtkButton" id="read_all">
+                <property name="width_request">112</property>
+                <property name="height_request">65</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_bottom">1</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="pixbuf">image/client/reload(1).png</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="save_client">
+                <property name="width_request">112</property>
+                <property name="height_request">65</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_save_client_clicked" swapped="no"/>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="pixbuf">image/client/add-user.png</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="width_request">112</property>
+                <property name="height_request">65</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="pixbuf">image/client/edit.png</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="width_request">112</property>
+                <property name="height_request">65</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="pixbuf">image/client/rubbish(1).png</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="y">61</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="show_all_clients">
+            <property name="width_request">473</property>
+            <property name="height_request">125</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="orientation">vertical</property>
+            <signal name="add" handler="add_grid_to_box" swapped="no"/>
+            <child>
+              <object class="GtkGrid" id="grid_of_client">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">2</property>
+            <property name="y">165</property>
+          </packing>
+        </child>
+        <style>
+          <class name="label_gestion_client"/>
+        </style>
+      </object>
+    </child>
+    <style>
+      <class name="container_client_page"/>
+    </style>
+  </object>
+  <object class="GtkSizeGroup">
+    <widgets>
+      <widget name="save_client"/>
+    </widgets>
+  </object>
+  <object class="GtkWindow" id="connexion_page">
+    <property name="can_focus">False</property>
+    <property name="default_width">400</property>
+    <property name="default_height">467</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed" id="container_conexion_page">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="submit_button">
+            <property name="label" translatable="yes">Se connecter</property>
+            <property name="width_request">231</property>
+            <property name="height_request">58</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_submit_button_clicked" swapped="no"/>
+            <style>
+              <class name="submitLoginButton"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">109</property>
+            <property name="y">369</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="TITLE_CONNEXION_PAGE">
+            <property name="width_request">422</property>
+            <property name="height_request">44</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">BIBLIOTHEQUE ESATIC</property>
+            <style>
+              <class name="titleOfAuth"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEntry" id="username">
+            <property name="width_request">226</property>
+            <property name="height_request">39</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="placeholder_text" translatable="yes">Username</property>
+            <style>
+              <class name="input_login"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">114</property>
+            <property name="y">225</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="password">
+            <property name="width_request">224</property>
+            <property name="height_request">39</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="visibility">False</property>
+            <property name="placeholder_text" translatable="yes">Password</property>
+            <style>
+              <class name="pass_input"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">115</property>
+            <property name="y">304</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="message_text">
+            <property name="width_request">290</property>
+            <property name="height_request">31</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes"> </property>
+            <style>
+              <class name="login_error"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">84</property>
+            <property name="y">37</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="connexion_image">
+            <property name="width_request">128</property>
+            <property name="height_request">128</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">image/user.png</property>
+          </object>
+          <packing>
+            <property name="x">154</property>
+            <property name="y">73</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="container_auth"/>
+    </style>
+  </object>
+  <object class="GtkWindow" id="account_page">
+    <property name="can_focus">False</property>
+    <property name="default_width">440</property>
+    <property name="default_height">513</property>
+    <property name="transient_for">connexion_page</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="functions_page">
+            <property name="width_request">439</property>
+            <property name="height_request">60</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">GESTIONNAIRE BIBLIOTHÈQUE</property>
+            <style>
+              <class name="title_account"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="book_button">
+            <property name="width_request">303</property>
+            <property name="height_request">104</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_book_button_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/book.png</property>
+              </object>
+            </child>
+            <style>
+              <class name="book_button"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">82</property>
+            <property name="y">199</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="client_button">
+            <property name="width_request">303</property>
+            <property name="height_request">140</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="xalign">0.5</property>
+            <property name="yalign">0.5</property>
+            <signal name="clicked" handler="on_client_button_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/student(2).png</property>
+              </object>
+            </child>
+            <style>
+              <class name="client_button"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">82</property>
+            <property name="y">47</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="borrow_return_button">
+            <property name="width_request">303</property>
+            <property name="height_request">104</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_borrow_return_button_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/books.png</property>
+              </object>
+            </child>
+            <style>
+              <class name="borrow_button"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">80</property>
+            <property name="y">359</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="account_page"/>
+    </style>
+  </object>
+  <object class="GtkWindow" id="win_for_save_book">
+    <property name="width_request">402</property>
+    <property name="height_request">629</property>
+    <property name="can_focus">False</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="width_request">440</property>
+            <property name="height_request">52</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">ENREGISTRER UN NOUVEAU LIVRE</property>
+            <style>
+              <class name="save_book_label"/>
+            </style>
+          </object>
+          <packing>
+            <property name="y">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="hide_book_saver_page">
+            <property name="width_request">92</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="hexpand">True</property>
+            <signal name="clicked" handler="on_hide_book_saver_page_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/hide.png</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">69</property>
+            <property name="y">564</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="message_operation_on_saving_book">
+            <property name="width_request">216</property>
+            <property name="height_request">41</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <style>
+              <class name="label_erreur_to_insert"/>
+            </style>
+          </object>
+          <packing>
+            <property name="x">115</property>
+            <property name="y">52</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="container_to_save_book">
+            <property name="width_request">298</property>
+            <property name="height_request">251</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">8</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkEntry" id="title">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Titre Livre</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="description">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Libéllé</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="author">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Auteur</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="category">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Categorie</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkGrid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">3</property>
+                <child>
+                  <object class="GtkButton" id="close_book_saver">
+                    <property name="label" translatable="yes">Annuler</property>
+                    <property name="width_request">106</property>
+                    <property name="height_request">46</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <signal name="clicked" handler="on_close_book_saver_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="register_book_button">
+                    <property name="label" translatable="yes">Enregistrer</property>
+                    <property name="width_request">191</property>
+                    <property name="height_request">47</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <signal name="clicked" handler="on_register_book_button_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="pack_type">end</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="qty">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Quantité en stock</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">5</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">67</property>
+            <property name="y">261</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage">
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">image/book.png</property>
+          </object>
+          <packing>
+            <property name="x">160</property>
+            <property name="y">127</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="remove_book_button">
+            <property name="width_request">100</property>
+            <property name="height_request">39</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_remove_book_button_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/client/rubbish(1).png</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">169</property>
+            <property name="y">564</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="container_to_remove_book">
+            <property name="width_request">295</property>
+            <property name="height_request">46</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkEntry" id="title_of_book">
+                <property name="width_request">195</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Titre du livre</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="remove_book_submit">
+                <property name="label" translatable="yes">Supprimer</property>
+                <property name="width_request">101</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_remove_book_submit_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">68</property>
+            <property name="y">264</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="save_book_window"/>
+    </style>
+  </object>
+  <object class="GtkWindow" id="win_for_save_client">
+    <property name="width_request">402</property>
+    <property name="height_request">629</property>
+    <property name="can_focus">False</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <object class="GtkFixed">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="width_request">440</property>
+            <property name="height_request">52</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">ENREGISTRER UN NOUVEAU CLIENT</property>
+          </object>
+          <packing>
+            <property name="y">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="hide_client_saver_page">
+            <property name="width_request">92</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="hexpand">True</property>
+            <signal name="clicked" handler="on_hide_client_saver_page_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/hide.png</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">69</property>
+            <property name="y">446</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="message_operation_on_saving_client">
+            <property name="width_request">216</property>
+            <property name="height_request">41</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">115</property>
+            <property name="y">52</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="container_to_save_client">
+            <property name="width_request">298</property>
+            <property name="height_request">241</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="margin_top">12</property>
+            <property name="margin_bottom">8</property>
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="GtkEntry" id="firstname">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Prenom</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="lastname">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Nom</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="classroom">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Classe</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="age">
+                <property name="width_request">216</property>
+                <property name="height_request">46</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">Age</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkGrid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">3</property>
+                <child>
+                  <object class="GtkButton" id="close_client_saver">
+                    <property name="label" translatable="yes">Annuler</property>
+                    <property name="width_request">106</property>
+                    <property name="height_request">46</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <signal name="clicked" handler="on_close_client_saver_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="register_button">
+                    <property name="label" translatable="yes">Enregistrer</property>
+                    <property name="width_request">191</property>
+                    <property name="height_request">47</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <signal name="clicked" handler="on_register_button_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">67</property>
+            <property name="y">195</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage">
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">image/client/add-user.png</property>
+          </object>
+          <packing>
+            <property name="x">160</property>
+            <property name="y">113</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="remove_client_button">
+            <property name="width_request">100</property>
+            <property name="height_request">39</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_remove_client_button_clicked" swapped="no"/>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">image/client/rubbish(1).png</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">169</property>
+            <property name="y">446</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="container_to_remove_client">
+            <property name="width_request">295</property>
+            <property name="height_request">46</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkEntry" id="num_carte_to_remove">
+                <property name="width_request">195</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="placeholder_text" translatable="yes">N° carte client</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="remove_action">
+                <property name="label" translatable="yes">Supprimer</property>
+                <property name="width_request">101</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_remove_action_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">68</property>
+            <property name="y">205</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="save_client_window"/>
+    </style>
+  </object>
+</interface>

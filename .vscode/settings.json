@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "gtk.h": "c",
+        "my_global.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "system_error": "c"
+    }
+}

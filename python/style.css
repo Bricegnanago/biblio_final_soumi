@@ -1,0 +1,49 @@
+.container_login, .container_client_page, .container_borrow, .container_auth, .account_page, .save_book_window, .save_client_window {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+.input_login, .pass_input, .label_save_client, .label_borrow {
+    background: rgb(2,0,36);
+    color: white;
+    box-shadow: 0 4px 6px 0 rgba(2,0,36,.4);
+}
+
+.input_login:focus, .pass_input:focus {
+    width: 100px; transition: width .35s ease-in-out;
+    border: 3px solid white;
+}
+
+.titleOfAuth, .title_account, .save_book_label, .label_gestion_client, .label_to_borrow{
+    box-shadow: 0 4px 6px 0 rgba(2,0,36,.3);
+    color: white;
+    background: rgb(2,0,36);
+    font-weight: bold;
+    /* text-transform: capitalize; */
+
+}
+
+.label_erreur_to_insert , .login_error, .error_to_borrow{
+    color: red;
+}
+
+.submitLoginButton {
+    box-shadow: 0 4px 6px 0 rgba(2,0,36,.3);
+}
+.submitLoginButton:hover {
+    background: rgb(2,0,36);
+    color: white;
+    transition: all 0 cubic-bezier(0.55, 0.085, 0.68, 0.53) .3s;
+}
+
+.borrow_button, .book_button, .client_button{
+    transition: all 0 cubic-bezier(0.55, 0.085, 0.68, 0.53) .3s;
+}
+.borrow_button:hover, .book_button:hover, .client_button:hover{
+    transition: all 0 cubic-bezier(0.55, 0.085, 0.68, 0.53) .3s;
+    border: 3px solid white;
+    background: rgb(69, 62, 201);
+    cursor: pointer;
+    padding-left: 35px;
+    padding-right: 35px;
+}
