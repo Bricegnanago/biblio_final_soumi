@@ -12,6 +12,15 @@ python python/stat_book.py \n\
 python python/stat_borrow.py \n\
 "
 
+#define SHOW_BOOKS "\
+#/bin/bash \n\
+python python/book.py \n\
+"
+#define SHOW_CLIENTS "\
+#/bin/bash \n\
+python python/test.py \n\
+"
+GtkWidget * save_client_success;
 GtkWidget *username;
 GtkWidget *password;
 GtkWidget *firstname;
@@ -26,7 +35,7 @@ GtkWidget *description;
 GtkWidget *author;
 GtkWidget *category;
 GtkWidget *qty;
-
+GtkWidget * save_book_success_label;
 
 GtkWidget *message_text;
 GtkWidget *container_to_save_client;
@@ -82,7 +91,7 @@ int main(int argc, char *argv[])
     GtkCssProvider *cssProvider = gtk_css_provider_new ();
     gtk_css_provider_load_from_path(cssProvider,"./python/style.css",NULL);
     gtk_builder_add_from_file (builder, "window_main.glade", NULL);
-
+    save_book_success_label = GTK_WIDGET(gtk_builder_get_object(builder, "save_book_success_label"));
     window = GTK_WIDGET(gtk_builder_get_object(builder, "connexion_page"));
     borrow_window = GTK_WIDGET(gtk_builder_get_object(builder, "borrow_window"));
     account_page = GTK_WIDGET(gtk_builder_get_object(builder, "account_page"));
@@ -101,7 +110,7 @@ int main(int argc, char *argv[])
     win_for_save_book = GTK_WIDGET(gtk_builder_get_object(builder, "win_for_save_book"));
     container_to_remove_book = GTK_WIDGET(gtk_builder_get_object(builder, "container_to_remove_book"));
     container_to_save_book = GTK_WIDGET(gtk_builder_get_object(builder, "container_to_save_book"));
-
+    save_client_success = GTK_WIDGET(gtk_builder_get_object(builder, "save_client_success"));
 
     // Book
     
@@ -196,13 +205,15 @@ void on_register_button_clicked () {
     
     client_exists = checkIfClientExist(client);
 
-    if(client_exists == 0){
-        gtk_label_set_text(GTK_LABEL(message_operation_on_saving_client), "Cet client existe déja !");
+    if(client_exists == 1){
+        insertClient(client);
+        gtk_label_set_text(GTK_LABEL(save_client_success), "Client ajouté avec succès !");
+        gtk_label_set_text(GTK_LABEL(message_operation_on_saving_client), "");
     }
     else {
         // enregistrer ce utilisateur
-        insertClient(client);
-        gtk_label_set_text(GTK_LABEL(message_operation_on_saving_client), "Client ajouté avec succès !");
+        gtk_label_set_text(GTK_LABEL(save_client_success), "");
+        gtk_label_set_text(GTK_LABEL(message_operation_on_saving_client), "Cet client existe déja !");        
     }
     //verification des la base de données
 }
@@ -296,9 +307,9 @@ void on_clear_fields_of_borrow_clicked(){
 void on_submit_borrow_clicked(){
     client.numcart = gtk_entry_get_text(GTK_ENTRY(num_cart_label_to_borrow));
     book.title = gtk_entry_get_text(GTK_ENTRY(title_of_book_to_borrow));
-     int flag_exist = checkIfAlreadyBorrow(client);
-    int flag_stock = checkStockOfBook(book);
+    int flag_exist = checkIfAlreadyBorrow(client);
     int flag_client = checkIfClientExist(client);
+    int flag_stock = checkStockOfBook(book);    
     int flag_book = checkIfBookExist(book);
 
     //Verifier d'abord si l'on veut faire un retrait ou un dépot
@@ -422,12 +433,16 @@ void on_register_book_button_clicked(){
       
     int flag_book = checkIfBookExist(book);
 
-    if(flag_book == 0){
+    if(flag_book == 1){
         // Le livre existe belle et bien
-        printf("Le livre existe belle et bien");
+        insertBook(book);
+        gtk_label_set_text(GTK_LABEL(save_book_success_label), "Livre inséré avec succès");
+        gtk_label_set_text(GTK_LABEL(message_operation_on_saving_book), "");
+        
         
     }else{
-        insertBook(book);
+        printf("Le livre existe belle et bien");
+        gtk_label_set_text(GTK_LABEL(message_operation_on_saving_book), "Insertion de livre impossible");
     }
 }
 
@@ -441,11 +456,14 @@ void on_remove_book_submit_clicked(){
     if(flag_book_exist == 0){
         //le livre existe alors supprimer autorisé
         removeBook(book);
-        gtk_label_set_text(GTK_LABEL(message_operation_on_saving_book), "Suppression reussie");
+        gtk_label_set_text(GTK_LABEL(save_book_success_label), "Suppression reussie");
+        gtk_label_set_text(GTK_LABEL(save_book_success_label), "");
     }else{
         gtk_label_set_text(GTK_LABEL(message_operation_on_saving_book), "Impossible ! Livre inexistant !");
+        gtk_label_set_text(GTK_LABEL(save_book_success_label), "");
     }
 }
+
 void on_close_book_saver_clicked(){
     gtk_entry_set_text(GTK_ENTRY(title), "");
     gtk_entry_set_text(GTK_ENTRY(description), "");
@@ -453,7 +471,6 @@ void on_close_book_saver_clicked(){
     gtk_entry_set_text(GTK_ENTRY(category), "");
     gtk_entry_set_text(GTK_ENTRY(qty), "");
     gtk_entry_set_text(GTK_ENTRY(title_of_book), "");
-
 }
 
 void add_grid_to_box(){
@@ -463,4 +480,13 @@ void add_grid_to_box(){
 void on_window_main_destroy()
 {
     gtk_main_quit();
+}
+
+
+void show_list_of_book_clicked_cb(){
+    system(SHOW_BOOKS);
+}
+
+void save_client_button_cb(){
+    system(SHOW_CLIENTS);
 }
