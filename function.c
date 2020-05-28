@@ -35,7 +35,7 @@ void insertClient(Client client)
         char buf[1024] = {};
 
         char query_string[] = {
-            "INSERT INTO Client VALUES(null, '%s', '%s', '%s', '%d', '%s', NOW(), null, null)"};
+            "INSERT INTO Client VALUES(null, '%s', '%s', '%s', '%d', '%s', NOW(), null, 0)"};
         sprintf(buf, query_string, client.firstname, client.lastname, client.numcart, client.age, client.classroom);
         printf("%s\n", buf);
 

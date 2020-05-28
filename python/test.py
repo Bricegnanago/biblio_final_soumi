@@ -12,7 +12,7 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-mycursor.execute("select firstname, lastname, numcart, age, classroom from Client WHERE status_client=0")
+mycursor.execute("select firstname, lastname, numcart, age, classroom from Client WHERE status_client=0 ORDER BY client_id desc")
 listOfClient = mycursor.fetchall()
 
 clients = listOfClient
